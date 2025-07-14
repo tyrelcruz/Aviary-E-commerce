@@ -1,0 +1,415 @@
+.image-tiles {
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.tile {
+  position: relative;
+  background: var(--white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tile:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.tile-image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tile-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.penguin-bg {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.sloth-bg {
+  background: linear-gradient(135deg, #f3e5ab 0%, #d4ac0d 100%);
+}
+
+.condor-bg {
+  background: linear-gradient(135deg, #37474f 0%, #263238 100%);
+}
+
+/* Penguin Styles */
+.penguin {
+  position: relative;
+  z-index: 2;
+  transform: scale(1.2);
+}
+
+.penguin-body {
+  width: 80px;
+  height: 100px;
+  background: #2c3e50;
+  border-radius: 40px 40px 20px 20px;
+  position: relative;
+}
+
+.penguin-belly {
+  width: 50px;
+  height: 70px;
+  background: var(--white);
+  border-radius: 25px 25px 15px 15px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.penguin-head {
+  width: 60px;
+  height: 60px;
+  background: #2c3e50;
+  border-radius: 50%;
+  position: absolute;
+  top: -30px;
+  left: 10px;
+}
+
+.penguin-beak {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid #f39c12;
+  position: absolute;
+  bottom: 20px;
+  left: 22px;
+}
+
+.penguin-eye {
+  width: 8px;
+  height: 8px;
+  background: var(--white);
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+}
+
+.penguin-eye-left {
+  left: 15px;
+}
+.penguin-eye-right {
+  right: 15px;
+}
+
+.penguin-wing {
+  width: 25px;
+  height: 60px;
+  background: #34495e;
+  border-radius: 15px;
+  position: absolute;
+  top: 20px;
+}
+
+.penguin-wing-left {
+  left: -12px;
+  transform: rotate(-20deg);
+}
+
+.penguin-wing-right {
+  right: -12px;
+  transform: rotate(20deg);
+}
+
+.penguin-feet {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.penguin-foot {
+  width: 20px;
+  height: 8px;
+  background: #f39c12;
+  border-radius: 10px;
+  position: absolute;
+}
+
+.penguin-foot-left {
+  left: -15px;
+}
+.penguin-foot-right {
+  right: -15px;
+}
+
+/* Sloth Styles */
+.sloth {
+  position: relative;
+  z-index: 2;
+  transform: scale(1.1);
+}
+
+.sloth-body {
+  width: 90px;
+  height: 80px;
+  background: #8d6e63;
+  border-radius: 45px 45px 30px 30px;
+  position: relative;
+}
+
+.sloth-head {
+  width: 70px;
+  height: 65px;
+  background: #a1887f;
+  border-radius: 50%;
+  position: absolute;
+  top: -25px;
+  left: 10px;
+}
+
+.sloth-eye {
+  width: 6px;
+  height: 6px;
+  background: #2c3e50;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+}
+
+.sloth-eye-left {
+  left: 18px;
+}
+.sloth-eye-right {
+  right: 18px;
+}
+
+.sloth-nose {
+  width: 4px;
+  height: 4px;
+  background: #2c3e50;
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+  left: 33px;
+}
+
+.sloth-mouth {
+  width: 12px;
+  height: 2px;
+  background: #2c3e50;
+  border-radius: 2px;
+  position: absolute;
+  top: 42px;
+  left: 29px;
+}
+
+.sloth-arm {
+  width: 15px;
+  height: 50px;
+  background: #8d6e63;
+  border-radius: 10px;
+  position: absolute;
+  top: 15px;
+}
+
+.sloth-arm-left {
+  left: -10px;
+  transform: rotate(-30deg);
+}
+
+.sloth-arm-right {
+  right: -10px;
+  transform: rotate(30deg);
+}
+
+.sloth-claw {
+  width: 8px;
+  height: 8px;
+  background: #5d4037;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -5px;
+}
+
+.sloth-claw-left {
+  left: -6px;
+  top: 55px;
+}
+
+.sloth-claw-right {
+  right: -6px;
+  top: 55px;
+}
+
+/* Condor Styles */
+.condor {
+  position: relative;
+  z-index: 2;
+  transform: scale(1.3);
+}
+
+.condor-body {
+  width: 60px;
+  height: 80px;
+  background: #2c3e50;
+  border-radius: 30px 30px 20px 20px;
+  position: relative;
+}
+
+.condor-head {
+  width: 40px;
+  height: 45px;
+  background: #34495e;
+  border-radius: 20px 20px 15px 15px;
+  position: absolute;
+  top: -20px;
+  left: 10px;
+}
+
+.condor-eye {
+  width: 6px;
+  height: 6px;
+  background: #e74c3c;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+.condor-beak {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 15px solid #f1c40f;
+  position: absolute;
+  bottom: 5px;
+  left: 14px;
+}
+
+.condor-wing {
+  width: 40px;
+  height: 30px;
+  background: #2c3e50;
+  border-radius: 20px 5px 5px 20px;
+  position: absolute;
+  top: 10px;
+}
+
+.condor-wing-left {
+  left: -25px;
+  transform: rotate(-15deg);
+}
+
+.condor-wing-right {
+  right: -25px;
+  transform: rotate(15deg) scaleX(-1);
+}
+
+.wing-feather {
+  width: 8px;
+  height: 15px;
+  background: #34495e;
+  border-radius: 4px;
+  position: absolute;
+  bottom: -5px;
+}
+
+.wing-feather:nth-child(1) {
+  left: 5px;
+}
+.wing-feather:nth-child(2) {
+  left: 15px;
+}
+.wing-feather:nth-child(3) {
+  left: 25px;
+}
+
+.condor-tail {
+  width: 30px;
+  height: 20px;
+  background: #2c3e50;
+  border-radius: 0 0 15px 15px;
+  position: absolute;
+  bottom: -10px;
+  left: 15px;
+}
+
+/* Tile Content */
+.tile-content {
+  padding: 1.5rem;
+  text-align: center;
+  background: white;
+}
+
+.tile-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 0.75rem;
+}
+
+.tile-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.tile-link {
+  display: inline-block;
+  color: var(--accent-green);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--accent-green);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.tile-link:hover {
+  background-color: var(--accent-green);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .tiles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tile-image {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tile-image {
+    height: 200px;
+  }
+
+  .tile-content {
+    padding: 1.5rem;
+  }
+
+  .tile-title {
+    font-size: 1.3rem;
+  }
+
+  .tile-description {
+    font-size: 0.9rem;
+  }
+}

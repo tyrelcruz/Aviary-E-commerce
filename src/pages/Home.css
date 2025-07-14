@@ -1,0 +1,15 @@
+.home {
+  position: relative;
+  min-height: 100vh;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure the hero section starts from the top */
+.main-content .hero {
+  margin-top: 0;
+  padding-top: 0;
+}
