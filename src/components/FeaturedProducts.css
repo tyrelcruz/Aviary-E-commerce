@@ -1,32 +1,38 @@
 .featured-products {
-  padding: 4rem 0;
+  padding: 2rem 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  margin-top: 0;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 700;
   color: var(--primary-blue);
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .section-subtitle {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.4rem);
   color: #666;
-  max-width: 600px;
+  max-width: clamp(500px, 60vw, 700px);
   margin: 0 auto;
+  line-height: 1.5;
 }
 
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: clamp(1rem, 2vw, 2rem);
+  margin-bottom: clamp(1rem, 2vw, 2rem);
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .product-card {
@@ -167,13 +173,33 @@
   transform: translateY(-2px);
 }
 
+/* Tablet and smaller desktop */
+@media (max-width: 1024px) {
+  .featured-products {
+    padding: 1.5rem 0;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+  }
+}
+
 @media (max-width: 768px) {
   .featured-products {
-    padding: 3rem 0;
+    padding: 1rem 0;
   }
 
   .section-title {
     font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
   }
 
   .products-grid {
@@ -195,5 +221,220 @@
 
   .product-emoji {
     font-size: 3rem;
+  }
+
+  .product-name {
+    font-size: 1.3rem;
+  }
+
+  .product-description {
+    font-size: 0.95rem;
+  }
+
+  .product-price {
+    font-size: 1.4rem;
+  }
+
+  .product-original-price {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-products {
+    padding: 0.75rem 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .products-grid {
+    gap: 1.25rem;
+  }
+
+  .product-image {
+    height: 160px;
+  }
+
+  .product-info {
+    padding: 1.25rem;
+  }
+
+  .product-emoji {
+    font-size: 2.5rem;
+  }
+
+  .product-name {
+    font-size: 1.2rem;
+  }
+
+  .product-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .product-price {
+    font-size: 1.3rem;
+  }
+
+  .product-original-price {
+    font-size: 0.95rem;
+  }
+
+  .product-cta {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .view-all-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+  .featured-products {
+    padding: 2rem 0;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .product-image {
+    height: 140px;
+  }
+
+  .product-info {
+    padding: 1rem;
+  }
+
+  .product-emoji {
+    font-size: 2rem;
+  }
+
+  .product-name {
+    font-size: 1.1rem;
+  }
+
+  .product-description {
+    font-size: 0.85rem;
+  }
+}
+
+/* MacBook Pro 14-inch and similar high-DPI displays */
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
+  .featured-products {
+    padding: 2.5rem 0;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.4rem;
+    max-width: 700px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+    max-width: 1400px;
+  }
+
+  .product-card {
+    border-radius: 20px;
+  }
+
+  .product-image {
+    height: 250px;
+  }
+
+  .product-info {
+    padding: 2.5rem;
+  }
+
+  .product-name {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .product-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .product-price {
+    font-size: 1.8rem;
+  }
+
+  .product-original-price {
+    font-size: 1.3rem;
+  }
+
+  .product-cta {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  .view-all-btn {
+    font-size: 1.2rem;
+    padding: 1.2rem 2.5rem;
+  }
+}
+
+/* Ultra-wide displays */
+@media screen and (min-width: 1601px) {
+  .featured-products {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-size: 3.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.6rem;
+    max-width: 800px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3.5rem;
+    margin-bottom: 5rem;
+    max-width: 1600px;
+  }
+
+  .product-image {
+    height: 280px;
+  }
+
+  .product-info {
+    padding: 3rem;
+  }
+
+  .product-name {
+    font-size: 1.8rem;
+  }
+
+  .product-description {
+    font-size: 1.2rem;
+  }
+
+  .product-price {
+    font-size: 2rem;
+  }
+
+  .product-original-price {
+    font-size: 1.4rem;
   }
 }

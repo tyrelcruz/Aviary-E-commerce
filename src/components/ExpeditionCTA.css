@@ -1,9 +1,10 @@
 .expedition-cta {
   position: relative;
-  padding: 80px 0;
+  padding: 40px 0;
   background: linear-gradient(135deg, #2e5f85 0%, #4a90b8 100%);
   color: var(--white);
   overflow: hidden;
+  margin-top: 0;
 }
 
 .expedition-background {
@@ -26,10 +27,12 @@
 .expedition-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 4rem;
+  gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
   position: relative;
   z-index: 3;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .expedition-text {
@@ -37,7 +40,7 @@
 }
 
 .expedition-title {
-  font-size: 3rem;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 2rem;
@@ -46,7 +49,7 @@
 }
 
 .expedition-description {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.3rem);
   line-height: 1.7;
   margin-bottom: 2.5rem;
   color: rgba(255, 255, 255, 0.95);
@@ -128,6 +131,26 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .expedition-cta {
+    padding: 30px 0;
+  }
+
+  .expedition-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .expedition-title {
+    font-size: 2.8rem;
+  }
+
+  .expedition-description {
+    font-size: 1.05rem;
+  }
+}
+
 @media (max-width: 968px) {
   .expedition-content {
     grid-template-columns: 1fr;
@@ -142,17 +165,19 @@
 
 @media (max-width: 768px) {
   .expedition-cta {
-    padding: 60px 0;
+    padding: 25px 0;
   }
 
   .expedition-title {
     font-size: 2rem;
     margin-bottom: 1.5rem;
+    line-height: 1.2;
   }
 
   .expedition-description {
     font-size: 1rem;
     margin-bottom: 2rem;
+    line-height: 1.6;
   }
 
   .btn-cta {
@@ -172,5 +197,130 @@
   .binoculars-icon {
     width: 60px;
     height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .expedition-cta {
+    padding: 20px 0;
+  }
+
+  .expedition-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .expedition-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .btn-cta {
+    font-size: 0.9rem;
+    padding: 12px 24px;
+    letter-spacing: 1px;
+  }
+
+  .flight-path {
+    width: 120px;
+    height: 60px;
+  }
+
+  .binoculars-icon {
+    width: 50px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 360px) {
+  .expedition-cta {
+    padding: 40px 0;
+  }
+
+  .expedition-title {
+    font-size: 1.6rem;
+  }
+
+  .expedition-description {
+    font-size: 0.9rem;
+  }
+
+  .btn-cta {
+    font-size: 0.85rem;
+    padding: 10px 20px;
+  }
+}
+
+/* MacBook Pro 14-inch and similar high-DPI displays */
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
+  .expedition-cta {
+    padding: 50px 0;
+  }
+
+  .expedition-content {
+    gap: 5rem;
+    max-width: 1400px;
+  }
+
+  .expedition-title {
+    font-size: 3.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .expedition-description {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+  }
+
+  .btn-cta {
+    font-size: 1.3rem;
+    padding: 18px 36px;
+  }
+
+  .flight-path {
+    width: 250px;
+    height: 125px;
+  }
+
+  .binoculars-icon {
+    width: 100px;
+    height: 75px;
+  }
+}
+
+/* Ultra-wide displays */
+@media screen and (min-width: 1601px) {
+  .expedition-cta {
+    padding: 60px 0;
+  }
+
+  .expedition-content {
+    gap: 6rem;
+    max-width: 1600px;
+  }
+
+  .expedition-title {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .expedition-description {
+    font-size: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .btn-cta {
+    font-size: 1.4rem;
+    padding: 20px 40px;
+  }
+
+  .flight-path {
+    width: 300px;
+    height: 150px;
+  }
+
+  .binoculars-icon {
+    width: 120px;
+    height: 90px;
   }
 }

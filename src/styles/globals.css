@@ -22,12 +22,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   color: var(--text-dark);
+  /* Optimize for high-DPI displays */
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+/* Responsive container improvements */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.5rem;
+  }
 }
 
 .btn {
@@ -61,4 +85,120 @@ body {
 .btn-secondary:hover {
   background-color: var(--light-green);
   transform: translateY(-2px);
+}
+
+/* Responsive utilities */
+.hidden-mobile {
+  display: block;
+}
+
+.hidden-tablet {
+  display: block;
+}
+
+.hidden-desktop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none;
+  }
+
+  .hidden-desktop {
+    display: block;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .hidden-tablet {
+    display: none;
+  }
+}
+
+/* Responsive text utilities */
+.text-responsive {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.text-responsive-large {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+.text-responsive-medium {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
+/* Responsive spacing utilities */
+.padding-responsive {
+  padding: clamp(1rem, 3vw, 3rem);
+}
+
+.margin-responsive {
+  margin: clamp(1rem, 3vw, 3rem);
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  button,
+  .btn,
+  a[role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* MacBook and high-DPI display optimizations */
+@media screen and (min-resolution: 2dppx) {
+  /* Ensure crisp rendering on high-DPI displays */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Improve image rendering */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* MacBook Pro 14-inch specific optimizations (1440px width) */
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
+  .container {
+    max-width: 1400px;
+    padding: 0 2rem;
+  }
+
+  /* Improve spacing for larger screens */
+  .main-content > * {
+    margin-bottom: 3rem;
+  }
+
+  /* Better typography scaling */
+  .hero-title {
+    font-size: clamp(3.5rem, 5vw, 4.5rem);
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 3.5vw, 3rem);
+  }
+}
+
+/* Ultra-wide and large displays */
+@media screen and (min-width: 1601px) {
+  .container {
+    max-width: 1600px;
+    padding: 0 3rem;
+  }
+
+  .main-content > * {
+    margin-bottom: 4rem;
+  }
 }

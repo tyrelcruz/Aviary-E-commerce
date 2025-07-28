@@ -1,15 +1,74 @@
 .home {
   position: relative;
   min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .main-content {
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 /* Ensure the hero section starts from the top */
 .main-content .hero {
   margin-top: 0;
   padding-top: 0;
+}
+
+/* Responsive container improvements */
+@media (max-width: 1200px) {
+  .main-content {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0 0.25rem;
+  }
+}
+
+/* Ensure proper spacing between sections on mobile */
+@media (max-width: 768px) {
+  .main-content > * {
+    margin-bottom: 1rem;
+  }
+
+  .main-content > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Ensure hero section is always visible */
+.main-content .hero {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Reduce spacing between sections */
+.main-content > *:not(.hero) {
+  margin-top: 0;
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-content {
+    padding: 0 1.5rem;
+  }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1201px) {
+  .main-content {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 }

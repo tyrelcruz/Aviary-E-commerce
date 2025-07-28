@@ -1,8 +1,9 @@
 /* Base testimonials styles */
 .testimonials {
-  padding: 4rem 0;
+  padding: 2rem 0;
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   position: relative;
+  margin-top: 0;
 }
 
 .container {
@@ -13,34 +14,39 @@
 
 .section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 700;
   color: #1a202c;
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .section-subtitle {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 2vw, 1.3rem);
   color: #64748b;
-  max-width: 600px;
+  max-width: clamp(500px, 60vw, 700px);
   margin: 0 auto;
+  line-height: 1.5;
 }
 
 /* 3D Marquee Container */
 .testimonials-3d-container {
   position: relative;
   display: flex;
-  height: 28rem; /* 448px */
+  height: clamp(15rem, 40vh, 25rem);
   width: 100%;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   perspective: 400px;
-  margin: 3rem 0;
+  margin: clamp(1rem, 2vw, 2rem) 0;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .testimonials-3d-wrapper {
@@ -273,8 +279,8 @@
 
 /* Stats Section */
 .stats-section {
-  margin-top: 4rem;
-  padding: 2rem 0;
+  margin-top: 2rem;
+  padding: 1.5rem 0;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 1rem;
   backdrop-filter: blur(10px);
@@ -306,7 +312,41 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .testimonials {
+    padding: 1.5rem 0;
+  }
+
+  .section-title {
+    font-size: 2.3rem;
+  }
+
+  .testimonials-3d-container {
+    height: 24rem;
+    perspective: 350px;
+  }
+
+  .testimonials-3d-wrapper {
+    gap: 1.25rem;
+    transform: translateX(-60px) translateY(0px) translateZ(-60px)
+      rotateX(12deg) rotateY(-6deg) rotateZ(12deg);
+  }
+
+  .testimonials-column {
+    width: 14rem;
+  }
+
+  .testimonial-card {
+    width: 13rem;
+    padding: 1.25rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .testimonials {
+    padding: 1rem 0;
+  }
+
   .testimonials-3d-container {
     height: 20rem;
     perspective: 300px;
@@ -331,6 +371,10 @@
     font-size: 2rem;
   }
 
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -339,9 +383,17 @@
   .stat-number {
     font-size: 2rem;
   }
+
+  .stat-label {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
+  .testimonials {
+    padding: 0.75rem 0;
+  }
+
   .testimonials-3d-container {
     height: 16rem;
   }
@@ -365,7 +417,187 @@
     font-size: 0.75rem;
   }
 
+  .testimonial-header {
+    margin-bottom: 0.75rem;
+  }
+
+  .testimonial-author {
+    padding-top: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
   .stats-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .testimonials {
+    padding: 2rem 0;
+  }
+
+  .testimonials-3d-container {
+    height: 14rem;
+  }
+
+  .testimonials-column {
+    width: 8.5rem;
+  }
+
+  .testimonial-card {
+    width: 7.5rem;
+    padding: 0.6rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.7rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .stat-number {
+    font-size: 1.6rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}
+
+/* MacBook Pro 14-inch and similar high-DPI displays */
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
+  .testimonials {
+    padding: 2.5rem 0;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.3rem;
+    max-width: 700px;
+  }
+
+  .testimonials-3d-container {
+    height: 32rem;
+    perspective: 500px;
+    max-width: 1400px;
+  }
+
+  .testimonials-3d-wrapper {
+    gap: 2rem;
+    transform: translateX(-80px) translateY(0px) translateZ(-80px)
+      rotateX(15deg) rotateY(-8deg) rotateZ(15deg);
+  }
+
+  .testimonials-column {
+    width: 18rem;
+  }
+
+  .testimonial-card {
+    width: 17rem;
+    padding: 2rem;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+
+  .testimonial-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial-author {
+    padding-top: 1.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    max-width: 1000px;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+  }
+
+  .stat-label {
+    font-size: 1.1rem;
+  }
+}
+
+/* Ultra-wide displays */
+@media screen and (min-width: 1601px) {
+  .testimonials {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-size: 3.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.5rem;
+    max-width: 800px;
+  }
+
+  .testimonials-3d-container {
+    height: 35rem;
+    perspective: 600px;
+    max-width: 1600px;
+  }
+
+  .testimonials-3d-wrapper {
+    gap: 2.5rem;
+  }
+
+  .testimonials-column {
+    width: 20rem;
+  }
+
+  .testimonial-card {
+    width: 19rem;
+    padding: 2.5rem;
+  }
+
+  .testimonial-text {
+    font-size: 1.1rem;
+  }
+
+  .stats-grid {
+    gap: 4rem;
+    max-width: 1200px;
+  }
+
+  .stat-number {
+    font-size: 3.5rem;
+  }
+
+  .stat-label {
+    font-size: 1.2rem;
   }
 }
