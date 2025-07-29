@@ -33,9 +33,9 @@
 
 .hero-content {
   position: absolute;
-  top: 55%;
+  top: 8%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
   z-index: 3;
   text-align: center;
   color: white;
