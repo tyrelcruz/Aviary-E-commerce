@@ -1,9 +1,9 @@
 .hero {
   position: relative;
-  height: 90vh;
+  height: 70vh;
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -32,7 +32,10 @@
 }
 
 .hero-content {
-  position: relative;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 3;
   text-align: center;
   color: white;
