@@ -179,20 +179,23 @@
 
 /* Mobile Actions in Navigation */
 .mobile-actions {
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   /* Hide on desktop by default */
   display: none;
+  width: 100%;
 }
 
 .mobile-actions .btn {
   width: 100%;
   text-align: center;
   justify-content: center;
-  margin: 0.3rem 0;
-  padding: 0.4rem 0.8rem;
-  font-size: 13px;
+  margin: 8px 0;
+  padding: 14px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  font-weight: 500;
 }
 
 .search-btn {
@@ -280,6 +283,8 @@
   min-height: 44px;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1002;
 }
 
 .mobile-menu-toggle:hover {
@@ -297,7 +302,7 @@
 
 /* Hamburger Animation */
 .mobile-menu-toggle.menu-open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(2px, 2px);
 }
 
 .mobile-menu-toggle.menu-open span:nth-child(2) {
@@ -305,7 +310,7 @@
 }
 
 .mobile-menu-toggle.menu-open span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
+  transform: rotate(-45deg) translate(4px, -4px);
 }
 
 /* Responsive Design */
@@ -377,20 +382,21 @@
   }
 
   .nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
+    position: fixed;
+    top: 0;
+    left: auto;
     right: 0;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgb(14, 14, 14);
     backdrop-filter: blur(15px);
-    transform: translateY(-100%);
+    transform: translateX(100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    max-height: 70vh;
+    max-height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
+    width: 300px;
   }
 
   .header-scrolled .nav {
@@ -402,25 +408,61 @@
     width: auto;
   }
 
+  /* Ensure mobile nav maintains consistent positioning when scrolled */
+  .header-scrolled .nav:not(.nav-open) {
+    left: auto;
+    right: 0;
+    width: 300px;
+  }
+
+  /* Override scrolled nav when menu is open */
+  .header-scrolled .nav-open {
+    left: auto;
+    right: 0px;
+    width: 300px;
+    height: 100vh;
+    border-radius: 0;
+    margin-top: 0;
+  }
+
   .nav-open {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
     visibility: visible;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    top: 0;
+    left: auto;
+    right: 0px;
+    width: 300px;
+    height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 1001;
   }
 
   .nav-list {
     flex-direction: column;
-    padding: 1rem 0;
-    gap: 0.75rem;
+    padding: 80px 20px 20px 20px;
+    height: 100vh;
+    gap: 0;
+    width: 100%;
+    flex: 1;
   }
 
   .nav-list li a {
-    font-size: 15px;
-    padding: 0.6rem 0.8rem;
+    font-size: 16px;
+    padding: 16px 20px;
     display: block;
-    text-align: center;
-    border-radius: 6px;
+    text-align: left;
+    border-radius: 8px;
     transition: all 0.3s ease;
+    margin-bottom: 8px;
+    border: 1px solid transparent;
+    font-weight: 500;
   }
 
   .nav-list li a:hover {

@@ -95,8 +95,17 @@
 
 /* Carousel Styles */
 .hero-carousel {
-  max-width: 100%; /* Match the full width like achievements section */
+  max-width: 100%;
   margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Ensure carousel stays above background but below mobile nav */
+}
+
+/* Prevent conflicts with mobile navigation */
+@media (max-width: 768px) {
+  .hero-carousel {
+    z-index: 1; /* Lower than mobile nav (z-index: 1001) */
+  }
 }
 
 .carousel-container {
@@ -104,6 +113,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .carousel-wrapper {
@@ -113,6 +124,8 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   cursor: grab;
   user-select: none;
+  max-width: 100%;
+  width: 100%;
 }
 
 .carousel-wrapper:active {
@@ -130,9 +143,11 @@
 
 .carousel-slide {
   min-width: 100%;
-  padding: 1.5rem; /* Reduced from 2rem */
+  padding: 1.5rem;
   text-align: center;
   border-radius: 15px;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .slide-content {
@@ -713,10 +728,18 @@
   .carousel-container {
     flex-direction: column;
     gap: 0.75rem;
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .carousel-wrapper {
+    max-width: 100%;
+    border-radius: 12px;
   }
 
   .carousel-slide {
     padding: 1.25rem;
+    max-width: 100%;
   }
 
   .slide-image {
@@ -829,8 +852,17 @@
     line-height: 1.4;
   }
 
+  .carousel-container {
+    padding: 0 0.25rem;
+  }
+
+  .carousel-wrapper {
+    border-radius: 10px;
+  }
+
   .carousel-slide {
     padding: 1rem;
+    max-width: 100%;
   }
 
   .slide-image {
