@@ -57,7 +57,6 @@ const Hero = () => {
       subtitle: "National Bird Show",
       color: "#FFD700",
     },
-
     {
       icon: "⭐",
       title: "5-Star Rating",
@@ -69,6 +68,12 @@ const Hero = () => {
       title: "20+ Years",
       subtitle: "Experience in Bird Care",
       color: "#CD7F32",
+    },
+    {
+      icon: "🦜",
+      title: "Conservation Award",
+      subtitle: "Wildlife Protection",
+      color: "#4CAF50",
     },
   ];
 
