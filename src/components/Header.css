@@ -5,7 +5,8 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
 }
 
 .header-scrolled {
@@ -24,15 +25,37 @@
   left: 50%;
   right: auto;
   transform: translateX(-50%);
-  animation: dropDown 0.4s ease-out forwards;
   /* Desktop: Fixed position when scrolled */
   position: fixed;
   top: 0;
+  animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-@keyframes dropDown {
+@keyframes slideDown {
   0% {
-    transform: translateX(-50%) translateY(-20px);
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownMobile {
+  0% {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownMobile {
+  0% {
+    transform: translateX(-50%) translateY(-100%);
     opacity: 0;
   }
   100% {
@@ -320,6 +343,7 @@
     background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    animation: slideDownMobile 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   .header-scrolled .container {
@@ -475,6 +499,7 @@
     background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    animation: slideDownMobile 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   .header-scrolled .nav {
@@ -591,6 +616,7 @@
     background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    animation: slideDownMobile 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   .header-scrolled .nav {
@@ -707,6 +733,7 @@
     background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    animation: slideDownMobile 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   .header-scrolled .nav {

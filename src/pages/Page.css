@@ -1,7 +1,7 @@
 /* Page Layout */
 .page {
   min-height: 100vh;
-  padding-top: 100px; /* Account for fixed header */
+  padding-top: 0; /* Account for fixed header */
 }
 
 .page-header {
