@@ -44,6 +44,7 @@
 }
 
 .hero-title {
+  margin-top: 100px;
   font-size: 2.8rem; /* Reduced from 3.5rem */
   font-weight: 700;
   margin-bottom: 0.75rem; /* Reduced from 1rem */
