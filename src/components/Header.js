@@ -88,6 +88,15 @@ const Header = () => {
                   Create an Appointment
                 </Link>
               </li>
+              <li className="mobile-actions">
+                <Link
+                  to="/admin"
+                  className="btn btn-admin"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Admin Login
+                </Link>
+              </li>
             </ul>
           </nav>
 
@@ -98,6 +107,9 @@ const Header = () => {
             </Link>
             <Link to="/contact" className="btn btn-primary">
               Create an Appointment
+            </Link>
+            <Link to="/admin" className="btn btn-admin">
+              Admin Login
             </Link>
           </div>
 

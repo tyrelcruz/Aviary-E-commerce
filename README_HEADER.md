@@ -120,6 +120,12 @@ const MyComponent = () => {
 - `.mobile-only`: Hidden on desktop
 - `.mobile-actions`: Action buttons in mobile menu
 
+### Button Classes
+
+- `.btn-link`: Transparent link button (About Us)
+- `.btn-primary`: Primary action button (Create an Appointment)
+- `.btn-admin`: Admin login button (Admin Login)
+
 ## Customization
 
 ### Changing Scroll Threshold

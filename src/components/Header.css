@@ -248,6 +248,23 @@
   box-shadow: 0 8px 25px rgba(46, 95, 133, 0.4);
 }
 
+.btn-admin {
+  background: rgba(220, 53, 69, 0.9);
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 0.9rem;
+  padding: 8px 16px;
+}
+
+.btn-admin:hover {
+  background: rgba(255, 73, 89, 0.9);
+  border-color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
+}
+
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
   display: none;
@@ -431,6 +448,11 @@
     font-size: 11px;
   }
 
+  .btn-admin {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
   .logo-title {
     font-size: 14px;
     letter-spacing: 1px;
@@ -558,6 +580,11 @@
     font-size: 10px;
   }
 
+  .btn-admin {
+    padding: 6px 10px;
+    font-size: 9px;
+  }
+
   .search-btn {
     width: 32px;
     height: 32px;
@@ -675,6 +702,11 @@
     font-size: 9px;
   }
 
+  .btn-admin {
+    padding: 5px 8px;
+    font-size: 8px;
+  }
+
   .search-btn {
     width: 30px;
     height: 30px;
@@ -790,6 +822,11 @@
   .btn-primary {
     padding: 4px 8px;
     font-size: 8px;
+  }
+
+  .btn-admin {
+    padding: 4px 6px;
+    font-size: 7px;
   }
 
   .search-btn {
